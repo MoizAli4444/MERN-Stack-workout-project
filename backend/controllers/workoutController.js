@@ -1,5 +1,13 @@
 const Workout = require('../models/workoutModel');
 
+
+// create new workout
+const getWorkouts = async (req,res) =>{
+    const workouts = await Workout.find({}).sort({createdAt:-1});
+    res.status(200).json(workouts);
+}
+
+// create new workout
 const createWorkout = async (req,res) =>{
     const {title, load, reps} = req.body;
 
