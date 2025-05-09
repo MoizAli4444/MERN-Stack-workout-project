@@ -4,7 +4,7 @@ const router = express.Router();
 
 // get all workouts
 router.get("/", (req,res) => {
-
+    res.json({mssg : 'get requires'});
 });
 
 // get single workout
