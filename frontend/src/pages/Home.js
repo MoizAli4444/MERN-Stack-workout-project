@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import {WorkoutDetails} from '../components/Navbar';
+
 const Home = () => {
   const [workouts, setWorkouts] = useState(null);
 
@@ -22,7 +24,7 @@ const Home = () => {
       <div className="workouts">
         {workouts &&
           workouts.map((workout) => (
-            <p key={workout._id}> {workout.title } </p>
+            <WorkoutDetails key={workout._id} workout={workout } />
           ))}
       </div>
     </div>
