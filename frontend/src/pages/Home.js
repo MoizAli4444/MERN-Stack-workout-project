@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import {WorkoutDetails} from '../components/Navbar';
+import WorkoutDetails from '../components/WorkoutDetails';
 
 const Home = () => {
   const [workouts, setWorkouts] = useState(null);
