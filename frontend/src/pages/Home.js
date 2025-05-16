@@ -4,7 +4,7 @@ const Home = () =>{
 
     const [workouts, setWorkouts] = useState(null);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       const fetchWorkouts = async ()=>{
         const response = await fetch ('http://localhost:4000/api/workouts');
         const json = await response.json();
@@ -21,7 +21,11 @@ const Home = () =>{
 
     return (
         <div className="home">
-            <h2>Home</h2>
+            <div className='workouts'>
+                {workouts && workouts.map((workout)=>(
+                    <p key={workout._id}> {workout.title} </p>
+                ))}
+            </div>
         </div>
     )
 }
