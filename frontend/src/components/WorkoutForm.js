@@ -27,6 +27,10 @@ const WorkoutForm = () => {
         }
 
          if (response.ok) {
+            setTitle('');
+            setReps('');
+            setLoad('');
+
             setError(null);
             console.log('workout added',json);
         }
