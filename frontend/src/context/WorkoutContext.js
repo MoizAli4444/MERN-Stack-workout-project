@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 
 export const WorkoutsContext = createContext();
 
@@ -16,14 +16,19 @@ export const workoutsReducer = (state, action) => {
             }
     
         default:
-            break;
+            return state;
     }
 }
 
 
 export const WorkoutsContextProvider = ({children}) => {
+
+    const [state, dispatch] = useReducer(workoutsReducer,{
+        workouts:null
+    })
+
     return (
-        <WorkoutsContextProvider>
+        <WorkoutsContextProvider value={{ state, dispatch }}>
             {children}
         </WorkoutsContextProvider>
     )
