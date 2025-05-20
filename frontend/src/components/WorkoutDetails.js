@@ -1,5 +1,11 @@
 const WorkoutDetails = ({ workout }) => {
 
+  const handleClick = async () => {
+    const response = await fetch('/api/workouts/'+workout._id,{
+      
+    })
+  }
+
   return (
     <div className="workout-details">
       <h4>{workout.title}</h4>
